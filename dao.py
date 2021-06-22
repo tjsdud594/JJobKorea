@@ -53,7 +53,7 @@ class EmpDAO:
             cur = conn.cursor()
             cur.execute("select * from board where ID=:ID", ID = ID)
             row = cur.fetchone()
-            data = '{"name":"' + str(row[1]) + '", "score":' + str(row[3]) + '", "review":' + (row[4]) + '}'
+            data = '{"cname":"' + str(row[1]) + '", "score":' + str(row[3]) + '", "review":' + (row[4]) + '}'
 
         except Exception as e:
             print(e)
@@ -65,7 +65,7 @@ class EmpDAO:
         return data
 
     def boardall(self):
-        data = ''
+        data = []
 
         try:
             conn = cx_Oracle.connect(user="SCOTT", password="TIGER", dsn="xe")
@@ -75,17 +75,15 @@ class EmpDAO:
             v = []
             for row in rows:
                 d = collections.OrderedDict()
-                d['ID'] = row[0]
-                d['name'] = row[1]
-                d['score'] = row[3]
-                d['review'] = row[4]
+                d['id'] = row[0]
+                d['cname'] = row[1]
+                d['score'] = row[2]
+                d['review'] = row[3]
 
                 v.append(d)
 
-            data = json.dumps(v, ensure_ascii=False)
 
-            return data
-                
+            data = json.dumps(v, ensure_ascii=False)
 
         except Exception as e:
             print(e)
@@ -93,7 +91,12 @@ class EmpDAO:
         finally:
             cur.close()
             conn.close()
-
         return data
+
+
+
 if __name__ == "__main__":
-    pass
+    dao = EmpDAO()
+#     dto = EmpDTO(2, 't', 20)
+#     dao.empinsert(dto)
+    dao.boardall()

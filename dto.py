@@ -32,7 +32,7 @@ class EmpDTO:
 
 
     def __str__(self):
-        return '번호 : ' + self.com_no + ' 이름 : ' + self.Cname + ' 아이디 : ' + self.id + ' 점수 : ' + self.score + ' 리뷰 : ' + self.review
+        return ' 이름 : ' + self.Cname + ' 아이디 : ' + self.id + ' 점수 : ' + self.score + ' 리뷰 : ' + self.review
 
 # if __name__ == '__main__':
 #     d = EmpDTO('1', '정현','dd', '1','노잼')

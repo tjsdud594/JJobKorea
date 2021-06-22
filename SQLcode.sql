@@ -4,8 +4,8 @@ create table Company(
     INDUSTRY varchar2(30) constraint Company_INDUSTRY_nn not null,
     TECH_STACK varchar2(30) constraint Company_TECH_STACK_nn not null,
     SALARY number(5),
-    SAL_GRADE number(3) constraint Company_SIZE_nn not null, 
-    SCALE varchar2(10) constraint Company_SIZE_nn not null,
+    SAL_GRADE number(3) constraint Company_SAL_GRADE_nn not null, 
+    SCALE varchar2(10) constraint Company_SCALE_nn not null,
     HIRECAREER varchar2(10) constraint Company_HIRECARREER_nn not null
 );
 
@@ -19,7 +19,7 @@ create table Board(
 insert all
      into Company values(01, 'BankSalad', 'finance', 'MachineLearning', 3392, 1, 'small', 'newcomer')
      into Company values(02, 'Shinhan Bank','finance','Analyze_Data', 3862, 1, 'big', 'newcomer')
-     into Company values(03, 'Kakao Bank', 'finance', 'MachineLearning', 3684, 1 'big', 'experience')
+     into Company values(03, 'Kakao Bank', 'finance', 'MachineLearning', 3684, 1, 'big', 'experience')
      into Company values(04, 'Tesla', 'automobile', 'Autonomous_driving',  14520, 9, 'big', 'experience')
      into Company values(05, 'Hyundai Motors', 'automobile', 'Autonomous_driving', 4370, 2, 'big', 'newcomer')
      into Company values(06, 'Kia Motors', 'automobile', 'MachineLearning', 4344, 2, 'big', 'experience')

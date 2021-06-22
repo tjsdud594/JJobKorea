@@ -10,26 +10,28 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous">
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <style>
         * {
             font-family: 'Stylish', sans-serif;
 
         }
+
         .button {
-            font-size:20px; padding:20px 20px;
-            margin : auto;
-            display: block;}
+            font-size: 20px;
+            padding: 20px 20px;
+            margin: auto;
+            display: block;
+        }
     </style>
 
     <script>
-        function insertreview(){
+        function insertreview() {
             let id = $('#id').val()
             let cname = $('#cname').val()
             let score = $('#score').val()
@@ -86,7 +88,7 @@
 
             <label for="id"><b>아이디</b></label>&nbsp;&nbsp;
             <input type="text" placeholder="아이디를 입력해주세요" name="id" id="id" required>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>회사</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="cname" name="cname" >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>회사</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="cname" name="cname">
                 <option value="회사">회사</option>
                 <option value="BankSalad">뱅크샐러드</option>
                 <option value="Shinhan Bank">신한은행</option>
@@ -106,20 +108,20 @@
             </select>
             &nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="score"><b>점수</b></label>&nbsp;&nbsp;
-            <input type="number" min= "1" max="5" placeholder="1-5까지 입력해주세요" name="score" id="score" required>
+            <input type="number" min="1" max="5" placeholder="1-5까지 입력해주세요" name="score" id="score" required>
             <hr><br>
             <label for="review"><b>리뷰</b></label>
             <input type="text" placeholder="리뷰를 입력해주세요" name="review" size=100 maxlength=100 id="review" required>
-            <button type="submit"   align = 'center'>리뷰 달기</button>
+            <button type="submit" align='center' onclick="boardall()">리뷰 달기</button>
             <hr>
-            <table class = 'table'>
+            <table class='table' id='demo'>
                 <thead>
-                <tr>
-                    <th>아이디</th>
-                    <th>회사</th>
-                    <th>점수</th>
-                    <th>리뷰</th>
-                </tr>
+                    <tr>
+                        <th>아이디</th>
+                        <th>회사</th>
+                        <th>점수</th>
+                        <th>리뷰</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -130,12 +132,55 @@
                     </tr>
                 </tbody>
             </table>
-            <br><hr><br>
-            <p align = 'center'>더 많은 회사정보를 알고 싶다면 &nbsp;<a href="https://www.jobkorea.co.kr/">잡코리아로가기!</a></p>
-            
+            <br>
+            <hr><br>
+            <p align='center'>더 많은 회사정보를 알고 싶다면 &nbsp;<a href="https://www.jobkorea.co.kr/">잡코리아로가기!</a></p>
+
         </div>
 
     </form>
+
+    <script>
+        function boardall() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = this.responseText;
+                    data = JSON.parse(data);
+
+                    tab = `
+                <table border="1">
+                    <tr><th>아이디</th><th>회사</th><th>점수</th><th>급여</th></tr>`;
+
+                    // https://poiemaweb.com/es6-template-literals
+                    let cname
+                    let id
+                    let score
+                    let review
+                    for (no in data) {
+                        cname = data[no].cname;
+                        id = data[no].id;
+                        score = data[no].score;
+                        review = data[no].review;
+
+                        tab = tab + `<tr>
+                        <td>${id}</td>
+                        <td>${cname}</td>
+                        <td>${score}</td>
+                        <td>${review}</td>
+                    </tr>`;
+                    }
+                    tab = tab + `</table>`;
+                    document.getElementById("demo").innerHTML = tab;
+
+                };
+            };
+            xhttp.open("GET", "emplist");
+            xhttp.send();
+        }
+
+
+    </script>
 
 </body>
 

@@ -20,8 +20,8 @@ class EmpDAO:
         conn = cx_Oracle.connect(user="SCOTT", password="TIGER", dsn="xe")
         cur = conn.cursor()
 
-        cur.execute("update board set score=:score, review=:review where ID=:ID and name=:name",
-                    name = dto.getName(), score = dto.getScore(), review = dto.getReview(), ID = dto.getID())
+        cur.execute("update board set score=:score, review=:review where ID=:ID and cname=:cname",
+                    cname = dto.getCname(), score = dto.getScore(), review = dto.getReview(), ID = dto.getID())
         conn.commit()
 
         cur.close()
@@ -33,8 +33,8 @@ class EmpDAO:
         cur = conn.cursor()
 
         try:
-            cur.execute("insert into board values (:com_no, :name, :id, :score, :review)",
-                        com_no=dto.getCom_no(), name = dto.getName(), id=dto.getId(), score = dto.getScore(), review = dto.Review())
+            cur.execute("insert into board values (:cname, :id, :score, :review)",
+                        cname = dto.getCname(), id=dto.getID(), score = dto.getScore(), review = dto.getReview())
             conn.commit()
         except Exception as e:
             print(e)

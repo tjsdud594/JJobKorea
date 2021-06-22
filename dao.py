@@ -44,16 +44,16 @@ class EmpDAO:
             conn.close()
 
     # 회사 정보 가져오기!!
-    def boardone(self, com_no):
+    def boardone(self, ID):
 
         data = ''
 
         try:
             conn = cx_Oracle.connect(user="SCOTT", password="TIGER", dsn="xe")
             cur = conn.cursor()
-            cur.execute("select * from board where com_no=:com_no", com_no=com_no)
+            cur.execute("select * from board where ID=:ID", ID = ID)
             row = cur.fetchone()
-            data = '{"ename":"' + row[1] + '", "sal":' + str(row[2]) + '}'
+            data = '{"com_no":"' + str(row[1]) + '", "name":' + (row[2]) + '", "score":' + str(row[3]) + '", "review":' + (row[4]) + '}'
 
         except Exception as e:
             print(e)

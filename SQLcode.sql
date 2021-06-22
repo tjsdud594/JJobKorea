@@ -3,21 +3,17 @@ create table Company(
     CNAME varchar(30) constraint Company_NAME_nn not null,
     INDUSTRY varchar2(30) constraint Company_INDUSTRY_nn not null,
     TECH_STACK varchar2(30) constraint Company_TECH_STACK_nn not null,
-    SALARY number(4),
-    SIZE varchar2(10) constraint Company_SIZE_nn not null,
-    HIRECARREER varchar2(10) constraint Company_HIRECARREER_nn not null
-    
-    
-    
+    SALARY number(5),
+    SCALE varchar2(10) constraint Company_SIZE_nn not null,
+    HIRECAREER varchar2(10) constraint Company_HIRECARREER_nn not null
 );
 
 create table Board(
     COM_NO number(3) constraint  Board_COM_NO_fk  references Company(COM_NO),
     ID number(3) constraint Board_ID_nn not null,
-    CNAME number(3) constraint Board_CNAME_fk references Company(CNAME),
+    CNAME number(3) constraint Board_CNAME_nn not null,
     SCORE number(1) constraint Board_SCORE_nn not null,
     REVIEW varchar(50)
-
 );
 
 insert all
@@ -35,6 +31,6 @@ insert all
      into Company values(12, 'Secui', 'Security', 'Cloud Security', 5416, 'big', 'newcomer')
      into Company values(13, 'Naver', 'IT Service', 'Platform', 4500, 'big', 'newcomer')
      into Company values(14, 'KaKao', 'IT Service', 'Applications', 4200, 'big', 'newcomer')
-     into Company values(15, 'Google Korea', 'IT Service', 'Voice recognition', 4055 , 'big', 'newcomer')
+     into Company values(15, 'Google Korea', 'IT Service', 'Platform', 4055 , 'big', 'newcomer')
 select * from dual;
 commit;

@@ -3,23 +3,23 @@ create table Company(
     CNAME varchar2(30) constraint Company_CNAME_nn not null unique,
     INDUSTRY varchar2(30) constraint Company_INDUSTRY_nn not null,
     TECH_STACK varchar2(30) constraint Company_TECH_STACK_nn not null,
-    SAL_GRADE number(3) constraint Company_SAL_GRADE_nn not null, 
+    SAL_GRADE varchar2(10) constraint Company_SAL_GRADE_nn not null, 
     SCALE varchar2(10) constraint Company_SCALE_nn not null,
     HIRECAREER varchar2(10) constraint Company_HIRECARREER_nn not null
 );
 
 create table Board(
-    ID number(3) constraint Board_ID_nn not null,
+    ID varchar2(20) constraint Board_ID_nn not null,
     CNAME varchar2(30),
     SCORE number(1) constraint Board_SCORE_nn not null,
-    REVIEW varchar2(50),
+    REVIEW varchar2(300),
     constraint FK_Board_CNAME foreign key (CNAME) references Company (CNAME)
 );
 
 create table Salary(
     CNAME varchar2(30),
     SALARY number(5) constraint Salary_SALARY_nn not null,
-    SAL_GRADE number(3) constraint Salary_SAL_GRADE_nn not null,
+    SAL_GRADE varchar2(10) constraint Salary_SAL_GRADE_nn not null,
     SAL_RANGE varchar2(50),
     constraint FK_Salary_CNAME foreign key (CNAME) references Company (CNAME)
 );

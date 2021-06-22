@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: 'Stylish', sans-serif;
+
+        }
+        .button {
+            font-size:20px; padding:20px 20px;
+            margin : auto;
+            display: block;}
+    </style>
+
+    <script>
+        function insertreview(){
+            let id = $('#id').val()
+            let cname = $('#cname').val()
+            let score = $('#score').val()
+            let review = $('#review').val()
+        }
+        // function makeReview() {
+        //     let title = $('#title').val()
+        //     let author = $('#author').val()
+        //     let review = $('#bookReview').val()
+
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "/review",
+        //         data: {title_give: title, author_give: author, review_give: review},
+        //         success: function (response) {
+        //             alert(response["msg"]);
+        //             window.location.reload();
+        //         }
+        //     })
+        // }
+
+        // function showReview() {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/review",
+        //         data: {},
+        //         success: function (response) {
+        //             let reviews = response['all_reviews']
+        //             for (let i = 0; i < reviews.length; i++) {
+        //                 let title = reviews[i]['title']
+        //                 let author = reviews[i]['author']
+        //                 let review = reviews[i]['review']
+
+        //                 let temp_html = `<tr>
+        //                                     <td>${title}</td>
+        //                                     <td>${author}</td>
+        //                                     <td>${review}</td>
+        //                                     </tr>`
+        //                 $('#reviews-box').append(temp_html)
+        //             }
+        //         }
+        //     })
+        // }
+    </script>
+</head>
+
+<body align='center'>
+    <form action="action_page.php">
+        <div class="container">
+            <h1 style=font-size:60px; align='center'>리뷰를 달아주세요!</h1>
+            <p style=font-size:30px; align='center'>자신이 다녔던 회사에 대해서 솔직한 리뷰를 작성해 보세요.</p>
+            <br>
+            <hr><br>
+
+            <label for="id"><b>아이디</b></label>&nbsp;&nbsp;
+            <input type="text" placeholder="아이디를 입력해주세요" name="id" id="id" required>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>회사</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="cname" name="cname" >
+                <option value="회사">회사</option>
+                <option value="BankSalad">뱅크샐러드</option>
+                <option value="Shinhan Bank">신한은행</option>
+                <option value="Kakao Bank">카카오뱅크</option>
+                <option value="Tesla">테슬라</option>
+                <option value="Hyundai Motors">현대자동차</option>
+                <option value="Kia Motors">기아자동차</option>
+                <option value="Inbody">인바디</option>
+                <option value="Cizen">씨젠</option>
+                <option value="Vuno">vuno</option>
+                <option value="ADT Caps">캡스</option>
+                <option value="Ahn Lab">안랩</option>
+                <option value="Secui">시큐아이</option>
+                <option value="Naver">네이버</option>
+                <option value="KaKao">카카오</option>
+                <option value="Google Korea">구글코리아</option>
+            </select>
+            &nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="score"><b>점수</b></label>&nbsp;&nbsp;
+            <input type="number" min= "1" max="5" placeholder="1-5까지 입력해주세요" name="score" id="score" required>
+            <hr><br>
+            <label for="review"><b>리뷰</b></label>
+            <input type="text" placeholder="리뷰를 입력해주세요" name="review" size=100 maxlength=100 id="review" required>
+            <button type="submit"   align = 'center'>리뷰 달기</button>
+            <hr>
+            <table class = 'table'>
+                <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>회사</th>
+                    <th>점수</th>
+                    <th>리뷰</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ddd</td>
+                        <td>뱅크샐러드</td>
+                        <td>5</td>
+                        <td>정말 좋은 회사였습니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><hr><br>
+            <p align = 'center'>더 많은 회사정보를 알고 싶다면 &nbsp;<a href="https://www.jobkorea.co.kr/">잡코리아로가기!</a></p>
+            
+        </div>
+
+    </form>
+
+</body>
+
+</html>

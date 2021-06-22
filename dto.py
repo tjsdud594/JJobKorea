@@ -1,22 +1,15 @@
 class EmpDTO:
-    def __init__(self, newcom_no, newname, newid, newscore, newreview):
-        self.com_no = newcom_no
-        self.name = newname
+    def __init__(self, newcname, newid, newscore, newreview):
+        self.cname = newcname
         self.id = newid
         self.score = newscore
         self.review = newreview
 
-    def getCom_no(self):
-        return self.com_no
+    def getCname(self):
+        return self.cname
     
-    def setCom_no(self, newcom_no):
-        self.com_no = newcom_no
-
-    def getName(self):
-        return self.name
-    
-    def setName(self, newname):
-        self.name = newname
+    def setCname(self, newCname):
+        self.Cname = newCname
 
     def getID(self):
         return self.id
@@ -39,7 +32,7 @@ class EmpDTO:
 
 
     def __str__(self):
-        return '번호 : ' + self.com_no + '- 이름 : ' + self.name + '- 아이디 : ' + self.id + '- 점수 : ' + self.score + '- 리뷰 : ' + self.review
+        return '번호 : ' + self.com_no + ' 이름 : ' + self.Cname + ' 아이디 : ' + self.id + ' 점수 : ' + self.score + ' 리뷰 : ' + self.review
 
 # if __name__ == '__main__':
 #     d = EmpDTO('1', '정현','dd', '1','노잼')

@@ -28,8 +28,8 @@ create table Chart(
     COM_NO number(3),
     CNAME varchar2(30),
     AVG_SCORE number(2, 1),
-    COLOR varchar2(10),
-    constraint FK_Chart_COM_NO foreign key (COM_NO) references Company (COM_NO)
+    COLOR varchar2(30) constraint Chart_COLOR_nn not null,
+    constraint FK_Chart_COM_NO foreign key (COM_NO) references Company (COM_NO),
     constraint FK_Chart_CNAME foreign key (CNAME) references Company (CNAME)
 );
 
@@ -97,7 +97,7 @@ insert all
      into Chart values(07, 'Inbody', (select round(avg(score)) from board where cname='Inbody'), '#be1010d0')
      into Chart values(08, 'Seegene', (select round(avg(score)) from board where cname='Seegene'), '#000000d0')
      into Chart values(09, 'Vuno', (select round(avg(score)) from board where cname='Vuno'), '#0a4283d0')
-     into Chart values(10, 'ADT Cap', (select round(avg(score)) from board where cname='ADT Cap'), '#023cfc')
+     into Chart values(10, 'ADT Caps', (select round(avg(score)) from board where cname='ADT Caps'), '#023cfc')
      into Chart values(11, 'Ahn Lab', (select round(avg(score)) from board where cname='Ahn Lab'), '#3a45d6')
      into Chart values(12, 'Secui', (select round(avg(score)) from board where cname='Secui'), '#006eff')
      into Chart values(13, 'Naver', (select round(avg(score)) from board where cname='Naver'), '#0fb100')

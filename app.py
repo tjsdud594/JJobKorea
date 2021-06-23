@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template
 from dao import EmpDAO
 from dto import EmpDTO
+from dao_main import ComDAO
+from dto_main import ComDTO
 
 app=Flask(__name__)
 
@@ -9,11 +11,19 @@ def get():
     return render_template("reqres.html")
 
 
+
 @app.route("/choice", methods=["POST"])
 def choice():
     return render_template("choice.html")
 
 
+
+@app.route("/chart", methods=["POST"])
+def chart():
+    return render_template("googlechart.html")
+
+
+# 게시판은 완료!!
 @app.route("/board", methods=["get"])
 def board():
     return render_template("review.html")

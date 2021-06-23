@@ -24,6 +24,14 @@ create table Salary(
     constraint FK_Salary_CNAME foreign key (CNAME) references Company (CNAME)
 );
 
+create table Chart(
+    COM_NO number(3),
+    CNAME varchar2(30),
+    AVG_SCORE number(2, 1),
+    constraint FK_Chart_COM_NO foreign key (COM_NO) references Company (COM_NO)
+    constraint FK_Chart_CNAME foreign key (CNAME) references Company (CNAME)
+);
+
 insert all
      into Company values(01, 'BankSalad', 'Finance', 'MachineLearning', 'Three', 'Small', 'Newcomer')
      into Company values(02, 'Shinhan Bank','Finance','Analyze_Data', 'Three', 'Big', 'Newcomer')
@@ -77,4 +85,24 @@ insert all
     into Board values('Trhuda', 'KaKao', 4.0, '워라벨이 좋으며 개발에 집중할 수 있는 회사')
     into Board values('Jonneach', 'Google Korea', 5.0, '최고의 회사')
 select * from dual;
+
+insert all
+     into Chart values(01, 'BankSalad', (select round(avg(score)) from board where cname='BankSalad'))
+     into Chart values(02, 'Shinhan Bank', (select round(avg(score)) from board where cname='Shinhan Bank'))
+     into Chart values(03, 'Kakao Bank', (select round(avg(score)) from board where cname='Kakao Bank'))
+     into Chart values(04, 'Tesla', (select round(avg(score)) from board where cname='Tesla'))
+     into Chart values(05, 'Hyundai Motors', (select round(avg(score)) from board where cname='Hyundai Motors'))
+     into Chart values(06, 'Kia Motors', (select round(avg(score)) from board where cname='Kia Motors'))
+     into Chart values(07, 'Inbody', (select round(avg(score)) from board where cname='Inbody'))
+     into Chart values(08, 'Seegene', (select round(avg(score)) from board where cname='Seegene'))
+     into Chart values(09, 'Vuno', (select round(avg(score)) from board where cname='Vuno'))
+     into Chart values(10, 'ADT Cap', (select round(avg(score)) from board where cname='ADT Cap'))
+     into Chart values(11, 'Ahn Lab', (select round(avg(score)) from board where cname='Ahn Lab'))
+     into Chart values(12, 'Secui', (select round(avg(score)) from board where cname='Secui'))
+     into Chart values(13, 'Naver', (select round(avg(score)) from board where cname='Naver'))
+     into Chart values(14, 'KaKao', (select round(avg(score)) from board where cname='KaKao'))
+     into Chart values(15, 'Google Korea', (select round(avg(score)) from board where cname='Google Korea'))
+select * from dual;
+
+
 commit;

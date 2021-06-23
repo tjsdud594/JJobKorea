@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawAxisTickColors);
+
+function drawAxisTickColors() {
+      var data = google.visualization.arrayToDataTable([
+        ['Company', 'Score',{ role: 'style' }, { role: 'annotation' }],
+        ['Copper', 4, '#b87333', 0],            // RGB value
+        ['Silver', 3, 'silver', 0],            // English color name
+        ['Gold', 2, 'gold', 0],
+        ['Platinum', 5, 'color: #e5e4e2', 0], // CSS-style declaration
+      ]);
+
+      var options = {
+        title: 'Blind Company Score',
+        focusTarget: 'category',
+        hAxis: {
+          title: 'Company',
+          textStyle: {
+            fontSize: 11,
+            color: '#053061',
+            bold: true,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 11,
+            color: '#053061',
+            bold: true,
+            italic: false
+          }
+        },
+        vAxis: {
+          title: 'score (scale of 1-5)',
+          maxValue: 5.0,
+          textStyle: {
+            fontSize: 11,
+            color: '#67001f',
+            bold: false,
+            italic: false
+          },
+          titleTextStyle: {
+            fontSize: 11,
+            color: '#67001f',
+            bold: true,
+            italic: false
+          }
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+
+<body>
+  <div id='chart_div'>
+
+
+
+  </div>
+
+  <script>
+    function score() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          data = this.responseText;
+          data = JSON.parse(data);
+
+
+        }
+      };
+      xhttp.open("get", "score");    // http://ip:port/insert
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      // empno=1&ename=재석&sal=10
+      queryString = "'';
+      console.log(queryString)
+      xhttp.send(queryString);
+    }
+  </script>
+</body>
+
+</html>

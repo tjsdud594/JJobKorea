@@ -11,11 +11,16 @@ def get():
     return render_template("reqres.html")
 
 
+
 @app.route("/choice", methods=["POST"])
 def choice():
     return render_template("choice.html")
 
 
+
+@app.route("/chart", methods=["POST"])
+def chart():
+    return render_template("googlechart.html")
 
 
 # 게시판은 완료!!

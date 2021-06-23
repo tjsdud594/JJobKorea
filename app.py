@@ -14,6 +14,9 @@ def choice():
     return render_template("choice.html")
 
 
+
+
+# 게시판은 완료!!
 @app.route("/board", methods=["get"])
 def board():
     return render_template("review.html")

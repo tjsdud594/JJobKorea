@@ -14,7 +14,7 @@ def choice():
     return render_template("choice.html")
 
 
-@app.route("/board", methods=["POST"])
+@app.route("/board", methods=["get"])
 def board():
     return render_template("review.html")
 
@@ -25,6 +25,7 @@ def insertreview():
     dao = EmpDAO()
     dto = EmpDTO(request.form.get("id"), request.form.get("cname"), request.form.get("score"), request.form.get("review"))
     dao.insert(dto)
+    print("================")
     return dao.boardone(request.form.get('id'))
 
 

@@ -113,8 +113,9 @@
             <hr><br>
             <label for="review"><b>리뷰</b></label>
             <input type="text" placeholder="리뷰를 입력해주세요" name="review" size=100 maxlength=100 id="review" required>
-            <button type="submit" align='center' onclick="insert();boardall();">리뷰 달기</button>
+            <button align='center' onclick="insert();">리뷰 달기</button>
             <hr>
+            <button onclick="boardall()">리뷰보기</button>
             <table class='table'>
                 <tbody id='demo'>
                     <tr>
@@ -123,10 +124,6 @@
                         <td></td>
                         <td></td>
 
-                        <!-- <td>ddd</td>
-                        <td>뱅크샐러드</td>
-                        <td>5</td>
-                        <td>정말 좋은 회사였습니다.</td> -->
                     </tr>
                 </tbody>
             </table>
@@ -141,13 +138,14 @@
     <script>
         //등록
         function insert() {
+            alert("등록함수개시");
             const xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     data = this.responseText;
                     data = JSON.parse(data);
 
-                    alert("게시가 완료되었습니다!")
+                    alert("게시가 완료되었습니다!");
                 }
             };
             xhttp.open("POST", "insert");    // http://ip:port/insert
@@ -160,12 +158,12 @@
                 "&review=" + document.getElementById("review").value;
             console.log(queryString)
             xhttp.send(queryString);
-        }
+        };
 
 
         // 테이블에 리뷰값 반환
         function boardall() {
-            alert("함수개시");
+            // alert("함수개시");
             const xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {

@@ -28,6 +28,7 @@ create table Chart(
     COM_NO number(3),
     CNAME varchar2(30),
     AVG_SCORE number(2, 1),
+    COLOR varchar2(10),
     constraint FK_Chart_COM_NO foreign key (COM_NO) references Company (COM_NO)
     constraint FK_Chart_CNAME foreign key (CNAME) references Company (CNAME)
 );
@@ -87,21 +88,21 @@ insert all
 select * from dual;
 
 insert all
-     into Chart values(01, 'BankSalad', (select round(avg(score)) from board where cname='BankSalad'))
-     into Chart values(02, 'Shinhan Bank', (select round(avg(score)) from board where cname='Shinhan Bank'))
-     into Chart values(03, 'Kakao Bank', (select round(avg(score)) from board where cname='Kakao Bank'))
-     into Chart values(04, 'Tesla', (select round(avg(score)) from board where cname='Tesla'))
-     into Chart values(05, 'Hyundai Motors', (select round(avg(score)) from board where cname='Hyundai Motors'))
-     into Chart values(06, 'Kia Motors', (select round(avg(score)) from board where cname='Kia Motors'))
-     into Chart values(07, 'Inbody', (select round(avg(score)) from board where cname='Inbody'))
-     into Chart values(08, 'Seegene', (select round(avg(score)) from board where cname='Seegene'))
-     into Chart values(09, 'Vuno', (select round(avg(score)) from board where cname='Vuno'))
-     into Chart values(10, 'ADT Cap', (select round(avg(score)) from board where cname='ADT Cap'))
-     into Chart values(11, 'Ahn Lab', (select round(avg(score)) from board where cname='Ahn Lab'))
-     into Chart values(12, 'Secui', (select round(avg(score)) from board where cname='Secui'))
-     into Chart values(13, 'Naver', (select round(avg(score)) from board where cname='Naver'))
-     into Chart values(14, 'KaKao', (select round(avg(score)) from board where cname='KaKao'))
-     into Chart values(15, 'Google Korea', (select round(avg(score)) from board where cname='Google Korea'))
+     into Chart values(01, 'BankSalad', (select round(avg(score)) from board where cname='BankSalad'), '#04c22d')
+     into Chart values(02, 'Shinhan Bank', (select round(avg(score)) from board where cname='Shinhan Bank'), '#518bd8fb')
+     into Chart values(03, 'Kakao Bank', (select round(avg(score)) from board where cname='Kakao Bank'), 'fdc200')
+     into Chart values(04, 'Tesla', (select round(avg(score)) from board where cname='Tesla'), '#be1010d0')
+     into Chart values(05, 'Hyundai Motors', (select round(avg(score)) from board where cname='Hyundai Motors'), 'rgb(66, 142, 255)')
+     into Chart values(06, 'Kia Motors', (select round(avg(score)) from board where cname='Kia Motors'), '#be1010d0')
+     into Chart values(07, 'Inbody', (select round(avg(score)) from board where cname='Inbody'), '#be1010d0')
+     into Chart values(08, 'Seegene', (select round(avg(score)) from board where cname='Seegene'), '#000000d0')
+     into Chart values(09, 'Vuno', (select round(avg(score)) from board where cname='Vuno'), '#0a4283d0')
+     into Chart values(10, 'ADT Cap', (select round(avg(score)) from board where cname='ADT Cap'), '#023cfc')
+     into Chart values(11, 'Ahn Lab', (select round(avg(score)) from board where cname='Ahn Lab'), '#3a45d6')
+     into Chart values(12, 'Secui', (select round(avg(score)) from board where cname='Secui'), '#006eff')
+     into Chart values(13, 'Naver', (select round(avg(score)) from board where cname='Naver'), '#0fb100')
+     into Chart values(14, 'KaKao', (select round(avg(score)) from board where cname='KaKao'), '#fdc200')
+     into Chart values(15, 'Google Korea', (select round(avg(score)) from board where cname='Google Korea'), '#000000')
 select * from dual;
 
 

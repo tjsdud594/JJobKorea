@@ -76,4 +76,5 @@ insert all
     into Board values('Enann', 'Naver', 4.0, '워라밸은 모르겠지만 일이 넘친다.')
     into Board values('Trhuda', 'KaKao', 4.0, '워라벨이 좋으며 개발에 집중할 수 있는 회사')
     into Board values('Jonneach', 'Google Korea', 5.0, '최고의 회사')
+select * from dual;
 commit;

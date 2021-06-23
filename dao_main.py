@@ -3,7 +3,7 @@ from dto_main import ComDTO
 import json
 import collections 
 
-class EmpDAO:
+class ComDAO:
     def companyone(self, industry, techstack, sal_grade, scale, hirecarrer):
 
         data = ''

@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template
 from dao import EmpDAO
 from dto import EmpDTO
+from dao_main import ComDAO
+from dto_main import ComDTO
 
 app=Flask(__name__)
 

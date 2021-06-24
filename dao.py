@@ -95,8 +95,8 @@ class EmpDAO:
 
 
 
-if __name__ == "__main__":
-    dao = EmpDAO()
-#     dto = EmpDTO(2, 't', 20)
-#     dao.empinsert(dto)
-    dao.boardall()
+# if __name__ == "__main__":
+#     dao = EmpDAO()
+# #     dto = EmpDTO(2, 't', 20)
+# #     dao.empinsert(dto)
+#     dao.boardall()

@@ -3,6 +3,8 @@ from dao import EmpDAO
 from dto import EmpDTO
 from dao_main import ComDAO
 from dto_main import ComDTO
+from dao_chart import ChtDAO
+from dto_chart import ChtDTO
 
 app=Flask(__name__)
 
@@ -14,7 +16,31 @@ def get():
 
 @app.route("/choice", methods=["POST"])
 def choice():
-    return render_template("choice.html")
+
+    a=request.form.getlist('Industry')    
+    b=request.form.getlist('Tech_Stack')
+    c=request.form.getlist('Salary')
+    d=request.form.getlist('Company_Size')
+    e=request.form.getlist('Hirecareer')
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+    print(e)
+
+    industry = "'" + "' ,'".join(a) + "'"
+    techstack = "'" + "' ,'".join(b) + "'"
+    sal_grade = "'" + "' ,'".join(c) + "'"
+    scale = "'" + "' ,'".join(d) + "'"
+    hirecareer = "'" + "' ,'".join(e) + "'"
+
+    print()
+    data = ComDAO().companyone(industry, techstack, sal_grade, scale, hirecareer)
+    # data = ComDAO().companyone(a, b, c, d, e)
+
+
+
+    return render_template("choice.html", result=data)
 
 
 
@@ -22,10 +48,15 @@ def choice():
 def chart():
     return render_template("googlechart.html")
 
+@app.route("/showchart", methods=["POST"])
+def showchart():
+    return ChtDAO().chartall()
+
 
 # 게시판은 완료!!
 @app.route("/board", methods=["get"])
 def board():
+    
     return render_template("review.html")
 
 

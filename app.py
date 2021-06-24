@@ -14,6 +14,13 @@ def get():
 
 @app.route("/choice", methods=["POST"])
 def choice():
+
+    a=request.form.getlist('Industry')
+    b=request.form.getlist('Tech_Stack')
+    c=request.form.getlist('Salary')
+    d=request.form.getlist('Company_Size')
+    e=request.form.getlist('Hirecareer')
+
     return render_template("choice.html")
 
 

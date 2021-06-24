@@ -5,11 +5,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        body,
+        h1,
+        h5 {
+            font-family: "Raleway", sans-serif
+        }
+
+
+
+        /* .bgimg {
+            background-image: url('/images/back.jpg');
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        body {
+            background-image: url(images/back2.pngs);
+            background-color: #3399ff;
+            background-size: cover;
+         } */
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #3399ff;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 23px;
+            padding: 20px;
+            width: 300px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+        
+
+        .checkbox input.checkbox1 {
+            font-size: 1em;
+            width: 1.5em;
+            height: 1.5em;
+            vertical-align: middle;
+        }
+
+        .checkbox input.checkbox1+label {
+            font-size: 1.125em;
+            vertical-align: middle;
+        }
+
+        /* .button {
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: auto;
+            display: block;
+            border: 2px solid #000e01; */
+
+        /* } */
+    </style>
+    <title>JJobkorea</title>
 
 
     <script type="text/javascript">
-    // 오른쪽 배너 스크립트
+        // 오른쪽 배너 스크립트
         var stmnLEFT = 10; // 오른쪽 여백 
         var stmnGAP1 = 0; // 위쪽 여백 
         var stmnGAP2 = 150; // 스크롤시 브라우저 위쪽과 떨어지는 거리 
@@ -213,131 +305,179 @@
 
 
 
-<body onload="InitializeStaticMenu()">
+<body onload="InitializeStaticMenu()" align='center'>
+    <div class="w3-top">
+        <div class="w3-bar w3-red w3-card w3-left-align w3-large" style="opacity: 0.8">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+                href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">직업찾기</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">게시판</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">기업정보</a>
+        </div>
+        <br><br><br>
+    </div>
 
 
-    <h3>Industry</h3>
-
-    <form action="choice" method="POST" onsubmit="return CheckForm(this)">
-        <input type="checkbox" id="finance" name="Industry" value="Finance" onclick="getIndustryValue()">
-        <label for="finance">금융</label>
-        <input type="checkbox" id="automobile" name="Industry" value="Automobile" onclick="getIndustryValue()">
-        <label for="automobile">자동차</label>
-        <input type="checkbox" id="medical" name="Industry" value="Medical" onclick="getIndustryValue()">
-        <label for="medical">의료</label>
-        <input type="checkbox" id="security" name="Industry" value="Security" onclick="getIndustryValue()">
-        <label for="security">보안</label>
-        <input type="checkbox" id="it_service" name="Industry" value="IT_Service" onclick="getIndustryValue()">
-        <label for="it_service">IT</label><br>
-
-
-
+    <h1 style="padding: 60px 10px 10px 10px;"><strong> What kind of job do you want?</strong></h1>
+    <br>
+    <hr>
+    <div class="image-container">
+        <img src="/images/back.jpg" alt="">
+        <h2>분야</h2>
         <br>
-        <hr><br>
+        <form action="choice" method="POST" onsubmit="return CheckForm(this)">
+            <div class="checkbox">
 
-        <h3>Tech Stack</h3>
-        <input type="checkbox" id="machinelearning" name="Tech_Stack" value="MachineLearning" onclick="getTechValue()">
-        <label for="machinelearning">머신러닝</label>
-        <input type="checkbox" id="data_analysis" name="Tech_Stack" value="Data_Analysis" onclick="getTechValue()">
-        <label for="data_analysis">데이터분석</label>
-        <input type="checkbox" id="autonomous_driving" name="Tech_Stack" value="Autonomous_Driving"
-            onclick="getTechValue()">
-        <label for="autonomous_driving">자율주행</label>
-        <input type="checkbox" id="image" name="Tech_Stack" value="Image" onclick="getTechValue()">
-        <label for="image">이미지</label>
-        <input type="checkbox" id="genetic_algorithm" name="Tech_Stack" value="Genetic_Algorithm"
-            onclick="getTechValue()">
-        <label for="genetic_algorithm">유전알고리즘</label> <br>
-        <input type="checkbox" id="cloud_security" name="Tech_Stack" value="Cloud_Security" onclick="getTechValue()">
-        <label for="cloud_security">클라우드 보안</label>
-        <input type="checkbox" id="anti_virus" name="Tech_Stack" value="Anti_Virus" onclick="getTechValue()">
-        <label for="anti_virus">안티바이러스</label>
-        <input type="checkbox" id="platform" name="Tech_Stack" value="Platform" onclick="getTechValue()">
-        <label for="platform">플랫폼</label>
-        <input type="checkbox" id="applications" name="Tech_Stack" value="Applications" onclick="getTechValue()">
-        <label for="applications">앱</label><br>
+                <input type="checkbox" id="finance" name="Industry" value="Finance" onclick="getIndustryValue()"
+                    class="checkbox1">
+                <label for="finance">금융</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+                <input type="checkbox" id="automobile" name="Industry" value="Automobile" onclick="getIndustryValue()"
+                    class="checkbox1">
+                <label for="automobile">자동차</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="medical" name="Industry" value="Medical" onclick="getIndustryValue()"
+                    class="checkbox1">
+                <label for="medical">의료</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="security" name="Industry" value="Security" onclick="getIndustryValue()"
+                    class="checkbox1">
+                <label for="security">보안</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="it_service" name="Industry" value="IT_Service" onclick="getIndustryValue()"
+                    class="checkbox1">
+                <label for="it_service">IT</label><br>
+            </div>
 
 
+            <br>
+            <hr><br>
+
+            <h2>전문 기술</h2>
+            <br>
+            <div class="checkbox">
+                <input type="checkbox" id="machinelearning" name="Tech_Stack" value="MachineLearning"
+                    onclick="getTechValue()" class="checkbox1">
+                <label for="machinelearning">머신러닝</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="data_analysis" name="Tech_Stack" value="Data_Analysis"
+                    onclick="getTechValue()" class="checkbox1">
+                <label for="data_analysis">데이터분석</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="autonomous_driving" name="Tech_Stack" value="Autonomous_Driving"
+                    onclick="getTechValue()" class="checkbox1">
+                <label for="autonomous_driving">자율주행</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="image" name="Tech_Stack" value="Image" onclick="getTechValue()"
+                    class="checkbox1">
+                <label for="image">이미지</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="genetic_algorithm" name="Tech_Stack" value="Genetic_Algorithm"
+                    onclick="getTechValue()" class="checkbox1">
+                <label for="genetic_algorithm">유전알고리즘</label> <br><br><br>
+                <input type="checkbox" id="cloud_security" name="Tech_Stack" value="Cloud_Security"
+                    onclick="getTechValue()" class="checkbox1">
+                <label for="cloud_security">클라우드 보안</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="anti_virus" name="Tech_Stack" value="Anti_Virus" onclick="getTechValue()"
+                    class="checkbox1">
+                <label for="anti_virus">안티바이러스</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="platform" name="Tech_Stack" value="Platform" onclick="getTechValue()"
+                    class="checkbox1">
+                <label for="platform">플랫폼</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="checkbox" id="applications" name="Tech_Stack" value="Applications" onclick="getTechValue()"
+                    class="checkbox1">
+                <label for="applications">앱</label><br>
+            </div>
+
+            <br>
+            <hr><br>
+
+            <h2>연봉</h2>
+            <br>
+            <div class="checkbox">
+                <input type="checkbox" id="three" name="Salary" value="Three" onclick="getSalaryValue()"
+                    class="checkbox1">
+                <label for="three">3000만 ~ 4000만</label> <br><br>
+                <input type="checkbox" id="four" name="Salary" value="Four" onclick="getSalaryValue()"
+                    class="checkbox1">
+                <label for="four">4000만 ~ 5000만</label><br><br>
+                <input type="checkbox" id="five" name="Salary" value="Five" onclick="getSalaryValue()"
+                    class="checkbox1">
+                <label for="five">5000만 ~ 6000만</label><br><br>
+                <input type="checkbox" id="more" name="Salary" value="More" onclick="getSalaryValue()"
+                    class="checkbox1">
+                <label for="more">그 이상</label><br>
+            </div>
+            <br>
+            <hr><br>
+
+            <h2>규모</h2>
+            <br>
+            <div class="checkbox">
+                <input type="checkbox" id="big" name="Company_Size" value="Big" onclick="getSizeValue()"
+                    class="checkbox1">
+                <label for="big">대기업</label> <br><br>
+                <input type="checkbox" id="medium" name="Company_Size" value="Medium" onclick="getSizeValue()"
+                    class="checkbox1">
+                <label for="medium">중견기업</label><br><br>
+                <input type="checkbox" id="small" name="Company_Size" value="Small" onclick="getSizeValue()"
+                    class="checkbox1">
+                <label for="small">중소기업</label><br>
+            </div>
+            <br>
+            <hr><br>
+
+            <h2>모집 기준</h2>
+            <br>
+            <div class="checkbox">
+                <input type="checkbox" id="newcomer" name="Hirecareer" value="Newcomer" onclick="getHireValue()"
+                    class="checkbox1">
+                <label for="newcomer">신입</label> <br><br>
+                <input type="checkbox" id="experience" name="Hirecareer" value="Experience" onclick="getHireValue()"
+                    class="checkbox1">
+                <label for="experience">경력</label><br>
+            </div>
+            <br><br>
+
+            <!-- <input type="submit" value="두근두근 나의 회사는?"> -->
+            <!-- <button class="button" type="submit">두근두근 나의 회사는?</button>-->
+            <button class="button" style="vertical-align:middle" type ="submit"><span> 두근두근 나의 회사는? </span></button>
+        </form>
         <br>
-        <hr><br>
+        <form action="board" method="get">
 
-        <h3>Salary</h3>
-        <input type="checkbox" id="three" name="Salary" value="Three" onclick="getSalaryValue()">
-        <label for="three">3000만 ~ 4000만</label> <br>
-        <input type="checkbox" id="four" name="Salary" value="Four" onclick="getSalaryValue()">
-        <label for="four">4000만 ~ 5000만</label><br>
-        <input type="checkbox" id="five" name="Salary" value="Five" onclick="getSalaryValue()">
-        <label for="five">5000만 ~ 6000만</label><br>
-        <input type="checkbox" id="more" name="Salary" value="More" onclick="getSalaryValue()">
-        <label for="more">그 이상</label><br>
-
-        <br>
-        <hr><br>
-
-        <h3>Company Size</h3>
-        <input type="checkbox" id="big" name="Company_Size" value="Big" onclick="getSizeValue()">
-        <label for="big">대기업</label> <br>
-        <input type="checkbox" id="medium" name="Company_Size" value="Medium" onclick="getSizeValue()">
-        <label for="medium">중견기업</label><br>
-        <input type="checkbox" id="small" name="Company_Size" value="Small" onclick="getSizeValue()">
-        <label for="small">중소기업</label><br>
-
-        <br>
-        <hr><br>
-
-        <h3>Hirecareer</h3>
-        <input type="checkbox" id="newcomer" name="Hirecareer" value="Newcomer" onclick="getHireValue()">
-        <label for="newcomer">신입</label> <br>
-        <input type="checkbox" id="experience" name="Hirecareer" value="Experience" onclick="getHireValue()">
-        <label for="experience">경력</label><br>
+            <button class="button" style="vertical-align:middle"><span>게시판이동</span></button>
+        </form>
 
         <br><br>
 
-        <input type="submit" value="두근두근 나의 회사는?">
-    </form>
-    
-    <form action="board" method="get">
+        <div class="col-25" id="STATICMENU">
+            <p>
+            <h4>Industry</h4>
+            </p>
+            <div id="IndustryResult" style="font-size: 13px;">
+            </div>
 
-        <button>게시판이동</button>
-    </form>
-    <form action="chart" method="POST">
-        <button>차트로이동</button>
-    </form>
+            <p>
+            <h4>Tech Stack</h4>
+            </p>
+            <div id="TechResult" style="font-size: 13px;">
+            </div>
 
-    <br><br>
+            <p>
+            <h4>Salary</h4>
+            </p>
+            <div id="SalaryResult" style="font-size: 13px;">
+            </div>
 
-    <div class="col-25" id="STATICMENU">
-        <p>
-        <h4>Industry</h4>
-        </p>
-        <div id="IndustryResult" style="font-size: 13px;">
+            <p>
+            <h4>Company Size</h4>
+            </p>
+            <div id="SizeResult" style="font-size: 13px;">
+            </div>
+
+            <p>
+            <h4>Hirecareer</h4>
+            </p>
+            <div id="HireResult" style="font-size: 13px;">
+            </div>
+
         </div>
-
-        <p>
-        <h4>Tech Stack</h4>
-        </p>
-        <div id="TechResult" style="font-size: 13px;">
-        </div>
-
-        <p>
-        <h4>Salary</h4>
-        </p>
-        <div id="SalaryResult" style="font-size: 13px;">
-        </div>
-
-        <p>
-        <h4>Company Size</h4>
-        </p>
-        <div id="SizeResult" style="font-size: 13px;">
-        </div>
-
-        <p>
-        <h4>Hirecareer</h4>
-        </p>
-        <div id="HireResult" style="font-size: 13px;">
-        </div>
-
-    </div>
 
 
 

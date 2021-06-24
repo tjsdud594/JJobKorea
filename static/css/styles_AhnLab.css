@@ -7337,7 +7337,7 @@ textarea.form-control-lg {
 }
 
 .text-secondary {
-  color: #0a4283d0 !important;
+  color: #3a45d6 !important;
 }
 
 .text-success {
@@ -7389,7 +7389,7 @@ textarea.form-control-lg {
 }
 
 .bg-primary {
-  background-color: #0a4283d0 !important;
+  background-color: #3a45d6 !important;
 }
 
 .bg-secondary {
@@ -10968,7 +10968,7 @@ html {
 
 .callout {
   padding: 15rem 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-callout.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../iamges/bg-callout.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11023,7 +11023,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/j.png");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/a.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -7337,7 +7337,7 @@ textarea.form-control-lg {
 }
 
 .text-secondary {
-  color: #0a4283d0 !important;
+  color: #be1010d0 !important;
 }
 
 .text-success {
@@ -7389,7 +7389,7 @@ textarea.form-control-lg {
 }
 
 .bg-primary {
-  background-color: #0a4283d0 !important;
+  background-color: #be1010d0 !important;
 }
 
 .bg-secondary {
@@ -11023,7 +11023,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/j.png");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/t.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

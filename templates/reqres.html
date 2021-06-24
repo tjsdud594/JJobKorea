@@ -68,7 +68,7 @@
             opacity: 1;
             right: 0;
         }
-        
+
 
         .checkbox input.checkbox1 {
             font-size: 1em;
@@ -311,10 +311,11 @@
             <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
                 href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
                     class="fa fa-bars"></i></a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">직업찾기</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">게시판</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">기업정보</a>
+            <a href="/" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+            <a href="choice" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">직업찾기</a>
+            <a href="board" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">게시판</a>
+            <a href="contact" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">기업정보</a>
+            <a href="chart" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">차트</a>
         </div>
         <br><br><br>
     </div>
@@ -327,7 +328,7 @@
         <img src="/images/back.jpg" alt="">
         <h2>분야</h2>
         <br>
-        <form action="company" method="POST" onsubmit="return CheckForm(this)">
+        <form action="contact" method="GET" onsubmit="return CheckForm(this)">
             <div class="checkbox">
 
                 <input type="checkbox" id="finance" name="Industry" value="Finance" onclick="getIndustryValue()"
@@ -436,7 +437,7 @@
 
             <!-- <input type="submit" value="두근두근 나의 회사는?"> -->
             <!-- <button class="button" type="submit">두근두근 나의 회사는?</button>-->
-            <button class="button" style="vertical-align:middle" type ="submit"><span> 두근두근 나의 회사는? </span></button>
+            <button class="button" style="vertical-align:middle" type="submit"><span> 두근두근 나의 회사는? </span></button>
         </form>
         <br>
         <form action="board" method="get">

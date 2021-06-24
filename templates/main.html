@@ -34,49 +34,49 @@
     }
 
     .button {
-            display: inline-block;
-            border-radius: 4px;
-            background-color: #3399ff;
-            border: none;
-            color: #FFFFFF;
-            text-align: center;
-            font-size: 23px;
-            padding: 20px;
-            width: 300px;
-            transition: all 0.5s;
-            cursor: pointer;
-            margin: auto;
-            display: block;
-        }
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #3399ff;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 23px;
+        padding: 20px;
+        width: 300px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: auto;
+        display: block;
+    }
 
-        .button span {
-            cursor: pointer;
-            display: inline-block;
-            position: relative;
-            transition: 0.5s;
-        }
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
 
-        .button span:after {
-            content: '\00bb';
-            position: absolute;
-            opacity: 0;
-            top: 0;
-            right: -20px;
-            transition: 0.5s;
-        }
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
 
-        .button:hover span {
-            padding-right: 25px;
-        }
+    .button:hover span {
+        padding-right: 25px;
+    }
 
-        .button:hover span:after {
-            opacity: 1;
-            right: 0;
-        }
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
 </style>
 
 <body>
-    
+
     <div class="bgimg w3-display-container w3-text-white">
         <div class="w3-display-middle w3-jumbo">
             <img src="../static/images/JJobkorea.png" alt="짭코리아">
@@ -87,7 +87,7 @@
                     href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
                         class="fa fa-bars"></i></a> -->
                 <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">직업찾기</a>
+                <a href="choice" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">직업찾기</a>
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">게시판</a>
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">기업정보</a>
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">차트</a>
@@ -95,30 +95,30 @@
 
         </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-        <button class="button" style="vertical-align:middle"><span>기업 찾으러 가기!! </span></button>
-
+        <form action="company" method="POST">
+            <button class="button" style="vertical-align:middle"><span>기업 찾으러 가기!! </span></button>
+        </form>
         <div class="w3-display-bottomleft w3-container">
 
             <p class="w3-xlarge">TEAM PROJECT</p>
             <p class="w3-large"></p>
             <p><strong> made by Ryu, Jeong, Johnny</strong></a></p>
         </div>
-    
-    <footer class="w3-container w3-padding-32  w3-center">
-        <h3><strong>Github</strong></h3>
-        <a class="w3-button w3-xxlarge w3-black" href="https://github.com/Puzzle928" title="강정현"><i class="fa fa-github
+
+        <footer class="w3-container w3-padding-32  w3-center">
+            <h3><strong>Github</strong></h3>
+            <a class="w3-button w3-xxlarge w3-black" href="https://github.com/Puzzle928" title="강정현"><i class="fa fa-github
       "></i></a>&emsp;&emsp;
-        <a class="w3-button w3-xxlarge w3-black" href="https://github.com/tjsdud594" title="류선영"><i class="fa fa-github
+            <a class="w3-button w3-xxlarge w3-black" href="https://github.com/tjsdud594" title="류선영"><i class="fa fa-github
           "></i></a>&emsp;&emsp;
-        <a class="w3-button w3-xxlarge w3-black" href="https://github.com/johnny9210" title="정일균"><i class="fa fa-github
+            <a class="w3-button w3-xxlarge w3-black" href="https://github.com/johnny9210" title="정일균"><i class="fa fa-github
           "></i></a>
-        
-        
-        <p class="w3-xlarge">강정현&emsp;류선영&emsp;정일균</p>
-      
-    </div>    
-      </footer>
+
+
+            <p class="w3-xlarge">강정현&emsp;류선영&emsp;정일균</p>
+
+    </div>
+    </footer>
     <!-- Menu Modal
     <div id="menu" class="w3-modal">
         <div class="w3-modal-content w3-animate-zoom">

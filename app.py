@@ -10,10 +10,14 @@ app=Flask(__name__)
 def get():
     return render_template("main.html")
 
-
-
-@app.route("/choice", methods=["POST"])
+@app.route("/choice", methods=["GET"])
 def choice():
+    return render_template("reqres.html")
+
+
+
+@app.route("/company", methods=["POST"])
+def company():
 
     a=request.form.getlist('Industry')
     b=request.form.getlist('Tech_Stack')
@@ -21,7 +25,7 @@ def choice():
     d=request.form.getlist('Company_Size')
     e=request.form.getlist('Hirecareer')
 
-    return render_template("choice.html")
+    return render_template("contact.html")
 
 
 
@@ -46,10 +50,10 @@ def insertreview():
     return dao.boardone(request.form.get('id'))
 
 
-# 모든 리뷰정보를 요청 및 응답하는 함수
-@app.route("/insertboard", methods=["GET"])
-def insertboard():
-    return EmpDAO().boardall()
+# # 모든 리뷰정보를 요청 및 응답하는 함수
+# @app.route("/insertboard", methods=["GET"])
+# def insertboard():
+#     return EmpDAO().boardall()
 
 
 

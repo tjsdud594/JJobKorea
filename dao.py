@@ -84,6 +84,7 @@ class EmpDAO:
 
 
             data = json.dumps(v, ensure_ascii=False)
+            # print(data)
 
         except Exception as e:
             print(e)

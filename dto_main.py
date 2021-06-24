@@ -1,12 +1,12 @@
 class ComDTO:
-    def __init__(self, newcom_no, newcname, newindustry, newtechstack, newsal_grade, newscale, newhirecareer):
+    def __init__(self, newcom_no, newcname, newindustry, newtechstack, newsal_grade, newscale, newhirecarrer):
         self.com_no = newcom_no
         self.cname = newcname
         self.industry = newindustry
         self.techstack = newtechstack
         self.sal_grade = newsal_grade
         self.scale = newscale
-        self.hirecareer = newhirecareer
+        self.hirecarrer = newhirecarrer
 
     def getCom_no(self):
         return self.com_no
@@ -44,15 +44,15 @@ class ComDTO:
     def setScale(self, newscale):
         self.scale = newscale
 
-    def getHirecareer(self):
-        return self.hirecareer
+    def getHirecarrer(self):
+        return self.hirecarrer
 
-    def setHirecareer(self, newhirecareer):
-        self.hirecareer = newhirecareer
+    def setHirecarrer(self, newhirecarrer):
+        self.hirecarrer = newhirecarrer
 
     def __str__(self):
-        return '번호 : ' + self.com_no + ', 회사이름 : ' + self.cname + ', 산업군 : ' + self.industry + ', 사용기술 : ' + self.techstack + ', 초봉 : ' + self.sal_grade + 'thousand' + ', 회사규모 : ' + self.scale + ', 선호인력 : ' + self.hirecareer
+        return '번호 : ' + self.com_no + ', 회사이름 : ' + self.cname + ', 산업군 : ' + self.industry + ', 사용기술 : ' + self.techstack + ', 초봉 : ' + self.sal_grade + 'thousand' + ', 회사규모 : ' + self.scale + ', 선호인력 : ' + self.hirecarrer
 
-# if __name__ == '__main__':
-#     d = ComDTO('01', 'BankSalad', 'Finance','MachineLearning', 'Three','Small', 'Newcomer')
-#     print(d)
+if __name__ == '__main__':
+    d = ComDTO('01', 'BankSalad', 'Finance','MachineLearning', 'Three','Small', 'Newcomer')
+    print(d)

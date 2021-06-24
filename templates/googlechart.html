@@ -6,100 +6,120 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-    google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawAxisTickColors);
 
-function drawAxisTickColors() {
-      var data = google.visualization.arrayToDataTable([
-        ['Company', 'Score',{ role: 'style' }, { role: 'annotation' }],
-        ['BankSalad', 4, '#b87333', 0],            // RGB value
-        ['Shinhan Bank', 3, 'silver', 0],            // English color name
-        ['Kakao Bank', 2, 'gold', 0],
-        ['Tesla', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['Hyundai Motors', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['Kia Motors', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['Inbody', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['Seegene', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['Vuno', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['ADT Cap', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['Ahn Lab', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['Secui', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['Naver', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['KaKao', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-        ['Google Korea', 5, 'color: #e5e4e2', 0], // CSS-style declaration
-      ]);
+    function chartall() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          data = this.responseText;
+          data = JSON.parse(data);
+          console.log(data);
+          console.log(typeof(data))
+  
+          tab = `[\n['Company', 'Score', { role: 'style' }],\n`;
 
-      var options = {
-        title: 'Blind Company Score',
-        focusTarget: 'category',
-        hAxis: {
-          title: 'Company',
-          textStyle: {
-            fontSize: 11,
-            color: '#053061',
-            bold: true,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 11,
-            color: '#053061',
-            bold: true,
-            italic: false
+          // https://poiemaweb.com/es6-template-literals
+          let cname
+          let avg_score
+          let sal
+          for (no in data) {
+            cname = data[no].cname;
+            avg_score = parseFloat(data[no].avg_score);
+            color = data[no].color;
+            console.log(avg_score)
+
+            tab = tab + `[`;
+            tab = tab + `'${cname}'`;
+            tab = tab + `, `;
+            tab = tab + `${avg_score}`;
+            tab = tab + `,`;
+            tab = tab + `'${color}'`;
+            tab = tab + `], \n`;
           }
-        },
-        vAxis: {
-          title: 'score (scale of 1-5)',
-          maxValue: 5.0,
-          textStyle: {
-            fontSize: 11,
-            color: '#67001f',
-            bold: false,
-            italic: false
-          },
-          titleTextStyle: {
-            fontSize: 11,
-            color: '#67001f',
-            bold: true,
-            italic: false
+          tab = tab + `]`;
+          console.log(tab)
+
+
+          google.charts.load('current', { packages: ['corechart', 'bar'] });
+          google.charts.setOnLoadCallback(drawAxisTickColors1);
+          function drawAxisTickColors1() {
+
+            // tab = JSON.parse(tab);
+            tab = eval(tab);
+            console.log(typeof(tab));
+            var data = google.visualization.arrayToDataTable(tab);
+            console.log(tab);
+
+            var options = {
+              title: 'Blind Company Score',
+              focusTarget: 'category',
+              hAxis: {
+                title: 'Company',
+                textStyle: {
+                  fontSize: 11,
+                  color: '#053061',
+                  bold: true,
+                  italic: false
+                },
+                titleTextStyle: {
+                  fontSize: 11,
+                  color: '#053061',
+                  bold: true,
+                  italic: false
+                }
+              },
+              vAxis: {
+                title: 'score (scale of 1-5)',
+                maxValue: 5.0,
+                textStyle: {
+                  fontSize: 11,
+                  color: '#67001f',
+                  bold: false,
+                  italic: false
+                },
+                titleTextStyle: {
+                  fontSize: 11,
+                  color: '#67001f',
+                  bold: true,
+                  italic: false
+                }
+              }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
           }
-        }
+        };
       };
-
-      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
+      xhttp.open("POST", "showchart");
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send();
     }
+
   </script>
+
+
+
+
 </head>
 
-<body>
+<body onload="chartall()">
   <div id='chart_div'>
 
 
 
   </div>
 
-  <script>
-    function score() {
-      const xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          data = this.responseText;
-          data = JSON.parse(data);
+  <div id='chart_all'>
 
 
-        }
-      };
-      xhttp.open("get", "score");    // http://ip:port/insert
-      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  </div>
 
-      // empno=1&ename=재석&sal=10
-      queryString = "'';
-      console.log(queryString)
-      xhttp.send(queryString);
-    }
-  </script>
+
 </body>
 
 </html>

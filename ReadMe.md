@@ -1,7 +1,7 @@
 
 ## **0621 mini project**
 ### - Who? 
->#### 강정현, 정일균, 류선영
+>#### 정일균, 류선영, 강정현
 ### - What?
 #### **1. 나에게 맞는 IT 기업찾기 WEB SITE생성**
 > 필요기술 : flask, web, sql
@@ -14,7 +14,10 @@
 > app.py로 구동 <br>
 > dto_main.py, dao_main.py, reqres.html 구성 <br>
 > reqres.html : 라디오 체크박스로 질문답을 구성하여 다중선택이 가능하도록 설계 <br>
-> dao_main.py : 다중선택한 결과로 sql에 연동하여 회사이름이 나오도록 메소드 설계 <br>
+> dao_main.py : 다중선택한 결과로 sql에 연동하여 회사이름이 나오도록 메소드 설계(where in 구문활용) <br>
 > dto_main.py : com_no, cname, industry, tech_stack, sal_grade, scale, hirecarrer 변수선언 후 각 get, set 메소드 설정 <br>
 
-.
+**게시판 page**
+> app.py로 구동 <br>
+> dto_review.py, dao_review.py, review.html 구성 <br>
+

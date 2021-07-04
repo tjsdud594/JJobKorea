@@ -20,4 +20,7 @@
 **게시판 page**
 > app.py로 구동 <br>
 > dto_review.py, dao_review.py, review.html 구성 <br>
+> review.html : sql review table의 update와 전체 table을 보여주도록 설계 <br>
+> dao_review.py : sql review table을 보여주는 메소드와 sql review table를 update를 하는 메소드 구현 <br>
+> 
 

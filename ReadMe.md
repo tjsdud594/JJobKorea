@@ -24,3 +24,8 @@
 > dao.py : sql review table을 보여주는 메소드와 sql review table를 update를 하는 메소드 구현 <br>
 > dto.py : cname, id, score, review 변수선언 후 각 get, set 메소드 설정<br>
 
+**회사소개 page**
+> 조사한 회사의 수 : 15
+> 만들 페이지 수 : 15
+> 사용한 template : https://startbootstrap.com/previews/stylish-portfolio
+

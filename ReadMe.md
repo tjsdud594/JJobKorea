@@ -25,7 +25,7 @@
 > dto.py : cname, id, score, review 변수선언 후 각 get, set 메소드 설정<br>
 
 **회사소개 page**
-> 조사한 회사의 수 : 15
-> 만들 페이지 수 : 15
-> 사용한 template : https://startbootstrap.com/previews/stylish-portfolio
+> 조사한 회사의 수 : 15 <br>
+> 만들 페이지 수 : 15 <br>
+> 사용한 template : https://startbootstrap.com/previews/stylish-portfolio <br>
 

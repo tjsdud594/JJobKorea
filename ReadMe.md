@@ -29,3 +29,6 @@
 > 만들 페이지 수 : 15 <br>
 > 사용한 template : https://startbootstrap.com/previews/stylish-portfolio <br>
 
+**chart page**
+> 구글 차트를 사용하여 실시간 연동 차트형성
+

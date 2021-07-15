@@ -25,11 +25,13 @@
 > dto.py : cname, id, score, review 변수선언 후 각 get, set 메소드 설정<br>
 
 **회사소개 page**
+> 담당 : 정일균
 > 조사한 회사의 수 : 15 <br>
 > 만들 페이지 수 : 15 <br>
 > 사용한 template : https://startbootstrap.com/previews/stylish-portfolio <br>
 
 **chart page**
+> 담당 : 류선영
 > 구글 차트를 사용하여 실시간 연동 차트형성
 > Oracle에 저장된 데이터를 어떻게 실시간으로 가져올 것인가?
 

@@ -38,7 +38,7 @@
 **sql 파일 생성**
 > 생성 table : Company, Board, Salary, Chart
 
-'''
+```
 create table Company(
     COM_NO number(3) primary key,
     CNAME varchar2(30) constraint Company_CNAME_nn not null unique,
@@ -72,5 +72,5 @@ create table Chart(
     constraint FK_Chart_COM_NO foreign key (COM_NO) references Company (COM_NO)
     constraint FK_Chart_CNAME foreign key (CNAME) references Company (CNAME)
 );
-'''
+```
 

@@ -11,9 +11,9 @@
 
 #### **3. 각 페이지에 사용할 dao.py, dto.py 파일생성 및 flask연동을 위한 app.py 생성**
 **main page**
-> app.py로 구동
-> main.html 로 구성
-> 가장먼저 보이는 첫 페이지
+> app.py로 구동 <br>
+> main.html 로 구성 <br>
+> 가장먼저 보이는 첫 페이지 <br>
 
 **설문 page**
 > app.py로 구동 <br>
